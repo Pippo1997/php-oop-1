@@ -1,5 +1,27 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+// classe movie
+class Movie {
+    public $title;
+    public $date_of_publication;
+    public $language;
+
+    // funzione construct
+    function __construct($_title, $_date_of_publication, $_language) {
+        $this->title = $_title;
+        $this->date_of_publication = $_date_of_publication;
+        $this->language = $_language;
+    }
+}
+
+$interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en');
+
+echo "<pre>";
+var_dump($interstellar);
+echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.0/axios.min.js" integrity="sha512-A6BG70odTHAJYENyMrDN6Rq+Zezdk+dFiFFN6jH1sB+uJT3SYMV4zDSVR+7VawJzvq7/IrT/2K3YWVKRqOyN0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Document</title>
+    <title>php oop 1</title>
 </head>
 
 <body>
@@ -29,7 +51,7 @@
         </div>
 
     </div>
-    
+
     <script src="./js/script.js"></script>
 </body>
 
