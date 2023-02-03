@@ -5,15 +5,19 @@ error_reporting(E_ALL);
 
 // classe movie
 class Movie {
+    // variabili d'istanza
     public $title;
     public $date_of_publication;
     public $language;
+    public $genres;
 
-    // funzione construct
-    public function __construct($_title, $_date_of_publication, $_language) {
+    // costruttore
+    public function __construct($_title, $_date_of_publication, $_language, $_genres) {
         $this->title = $_title;
         $this->date_of_publication = $_date_of_publication;
         $this->language = $_language;
+        $this->genres = $_genres;
+
     }
 
     // funzione titolo
@@ -22,21 +26,26 @@ class Movie {
     }
 
     // funzione data
-    public function getdate(){
+    public function getDate(){
         return $this->date_of_publication;
     }
 
     // funzione lingua
-    public function getlanguage(){
+    public function getLanguage(){
         return $this->language;
+    }
+
+    // funzione lingua
+    public function getGenres(){
+        return $this->genres;
     }
 
 }
 
-// film 1
-$interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en');
-// film 2
-$wolfOfWallStreet = new Movie('Wolf of wall street', 'January - 23 - 2014', 'en');
+// oggetto film 1
+$interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en', array('Sience-fiction', 'Adventure', 'Mystery', 'Drama'));
+// oggetto film 2
+$wolfOfWallStreet = new Movie('Wolf of Wall Street', 'January - 23 - 2014', 'en', array('Comedy', 'Dark-Comedy', 'crime fiction', 'Drama'));
 
 
 // echo "<pre>";
@@ -68,16 +77,20 @@ $wolfOfWallStreet = new Movie('Wolf of wall street', 'January - 23 - 2014', 'en'
             <div class="row">
                 <div class="col-12">
                     <?php
+                        //film Intertellar 
                         echo "<h1>" .$interstellar->getTitle() ."</h1>";
-                        echo "<div>Date of pubblication: " .$interstellar->getdate() ."</div>";
-                        echo "<div>Language: " .$interstellar->getlanguage() ."<div>";
+                        echo "<div>Date of pubblication: " .$interstellar->getDate() ."</div>";
+                        echo "<div>Language: " .$interstellar->getLanguage() ."<div>";
+                        echo "<div>Genres: " .implode(" - ", $interstellar->getGenres()) ."<div>";
                     ?>
                 </div>
                 <div class="col-12">
                     <?php
+                        // fil Walf of WallStreet
                         echo "<h1>" .$wolfOfWallStreet->getTitle() ."</h1>";
-                        echo "<div>Date of pubblication: " .$wolfOfWallStreet->getdate() ."<div>";
-                        echo "<div>Language: " .$wolfOfWallStreet->getlanguage() ."<div>";
+                        echo "<div>Date of pubblication: " .$wolfOfWallStreet->getDate() ."<div>";
+                        echo "<div>Language: " .$wolfOfWallStreet->getLanguage() ."<div>";
+                        echo "<div>Genres: " .implode(" - ", $wolfOfWallStreet->getGenres()) ."<div>";
                     ?>
                 </div>
             </div>
