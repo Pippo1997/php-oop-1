@@ -10,20 +10,30 @@ class Movie {
     public $date_of_publication;
     public $language;
     public $genres;
+    public $age;
 
     // costruttore
-    public function __construct($_title, $_date_of_publication, $_language, $_genres) {
+    public function __construct($_title, $_date_of_publication, $_language, $_genres, $_age) {
         $this->title = $_title;
         $this->date_of_publication = $_date_of_publication;
         $this->language = $_language;
         $this->genres = $_genres;
+        $this->age = $_age;
+    }
+
+    //funzione per calcolare età di film
+    public function getAge(){
+        $currentYear = date("Y");
+        $age = $currentYear - $this->age;
+
+        return $age;
     }
 }
 
 // oggetto film 1
-$interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en', array('Sience-fiction', 'Adventure', 'Mystery', 'Drama'));
+$interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en', array('Sience-fiction', 'Adventure', 'Mystery', 'Drama'), '2014');
 // oggetto film 2
-$wolfOfWallStreet = new Movie('Wolf of Wall Street', 'January - 23 - 2014', 'en', array('Comedy', 'Dark-Comedy', 'crime fiction', 'Drama'));
+$wolfOfWallStreet = new Movie('Wolf of Wall Street', 'January - 23 - 2014', 'en', array('Comedy', 'Dark-Comedy', 'crime fiction', 'Drama'), '2014');
 
 
 // echo "<pre>";
@@ -60,6 +70,7 @@ $wolfOfWallStreet = new Movie('Wolf of Wall Street', 'January - 23 - 2014', 'en'
                         echo "<div>Date of pubblication: " .$interstellar->date_of_publication ."</div>";
                         echo "<div>Language: " .$interstellar->language ."<div>";
                         echo "<div>Genres: " .implode(" - ", $interstellar->genres) ."<div>";
+                        echo "<div>Age movie: " .$interstellar->getAge() ."<div>";
                     ?>
                 </div>
                 <div class="col-12">
@@ -69,6 +80,7 @@ $wolfOfWallStreet = new Movie('Wolf of Wall Street', 'January - 23 - 2014', 'en'
                         echo "<div>Date of pubblication: " .$wolfOfWallStreet->date_of_publication ."<div>";
                         echo "<div>Language: " .$wolfOfWallStreet->language ."<div>";
                         echo "<div>Genres: " .implode(" - ", $wolfOfWallStreet->genres) ."<div>";
+                        echo "<div>Age movie: " .$wolfOfWallStreet->getAge() ."<div>";
                     ?>
                 </div>
             </div>
