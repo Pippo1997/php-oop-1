@@ -10,11 +10,24 @@ class Movie {
     public $language;
 
     // funzione construct
-    function __construct($_title, $_date_of_publication, $_language) {
+    public function __construct($_title, $_date_of_publication, $_language) {
         $this->title = $_title;
         $this->date_of_publication = $_date_of_publication;
         $this->language = $_language;
     }
+
+    public function getTitle(){
+        return $this->title;
+    }
+
+    public function getdate(){
+        return $this->date_of_publication;
+    }
+
+    public function getlanguage(){
+        return $this->language;
+    }
+
 }
 
 $interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en');
@@ -22,6 +35,7 @@ $interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en');
 echo "<pre>";
 var_dump($interstellar);
 echo "</pre>";
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +59,11 @@ echo "</pre>";
         <div class="container">
             <div class="row">
                 <div class="col-12">
-
+                    <?php
+                        echo $interstellar->getTitle();
+                        echo $interstellar->getdate();
+                        echo $interstellar->getlanguage();
+                    ?>
                 </div>
             </div>
         </div>
