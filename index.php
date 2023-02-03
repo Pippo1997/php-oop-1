@@ -17,29 +17,7 @@ class Movie {
         $this->date_of_publication = $_date_of_publication;
         $this->language = $_language;
         $this->genres = $_genres;
-
     }
-
-    // funzione titolo
-    public function getTitle(){
-        return $this->title;
-    }
-
-    // funzione data
-    public function getDate(){
-        return $this->date_of_publication;
-    }
-
-    // funzione lingua
-    public function getLanguage(){
-        return $this->language;
-    }
-
-    // funzione lingua
-    public function getGenres(){
-        return $this->genres;
-    }
-
 }
 
 // oggetto film 1
@@ -78,19 +56,19 @@ $wolfOfWallStreet = new Movie('Wolf of Wall Street', 'January - 23 - 2014', 'en'
                 <div class="col-12">
                     <?php
                         //film Intertellar 
-                        echo "<h1>" .$interstellar->getTitle() ."</h1>";
-                        echo "<div>Date of pubblication: " .$interstellar->getDate() ."</div>";
-                        echo "<div>Language: " .$interstellar->getLanguage() ."<div>";
-                        echo "<div>Genres: " .implode(" - ", $interstellar->getGenres()) ."<div>";
+                        echo "<h1>" .$interstellar->title ."</h1>";
+                        echo "<div>Date of pubblication: " .$interstellar->date_of_publication ."</div>";
+                        echo "<div>Language: " .$interstellar->language ."<div>";
+                        echo "<div>Genres: " .implode(" - ", $interstellar->genres) ."<div>";
                     ?>
                 </div>
                 <div class="col-12">
                     <?php
                         // fil Walf of WallStreet
-                        echo "<h1>" .$wolfOfWallStreet->getTitle() ."</h1>";
-                        echo "<div>Date of pubblication: " .$wolfOfWallStreet->getDate() ."<div>";
-                        echo "<div>Language: " .$wolfOfWallStreet->getLanguage() ."<div>";
-                        echo "<div>Genres: " .implode(" - ", $wolfOfWallStreet->getGenres()) ."<div>";
+                        echo "<h1>" .$wolfOfWallStreet->title  ."</h1>";
+                        echo "<div>Date of pubblication: " .$wolfOfWallStreet->date_of_publication ."<div>";
+                        echo "<div>Language: " .$wolfOfWallStreet->language ."<div>";
+                        echo "<div>Genres: " .implode(" - ", $wolfOfWallStreet->genres) ."<div>";
                     ?>
                 </div>
             </div>
