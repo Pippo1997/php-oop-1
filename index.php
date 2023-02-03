@@ -16,25 +16,33 @@ class Movie {
         $this->language = $_language;
     }
 
+    // funzione titolo
     public function getTitle(){
         return $this->title;
     }
 
+    // funzione data
     public function getdate(){
         return $this->date_of_publication;
     }
 
+    // funzione lingua
     public function getlanguage(){
         return $this->language;
     }
 
 }
 
+// film 1
 $interstellar = new Movie('Interstellar', 'October - 26 - 2014', 'en');
+// film 2
+$wolfOfWallStreet = new Movie('Wolf of wall street', 'January - 23 - 2014', 'en');
 
-echo "<pre>";
-var_dump($interstellar);
-echo "</pre>";
+
+// echo "<pre>";
+// var_dump($interstellar);
+// var_dunp($wolfOfWallStreet);
+// echo "</pre>";
 
 ?>
 
@@ -60,9 +68,16 @@ echo "</pre>";
             <div class="row">
                 <div class="col-12">
                     <?php
-                        echo $interstellar->getTitle();
-                        echo $interstellar->getdate();
-                        echo $interstellar->getlanguage();
+                        echo "<h1>" .$interstellar->getTitle() ."</h1>";
+                        echo "<div>Date of pubblication: " .$interstellar->getdate() ."</div>";
+                        echo "<div>Language: " .$interstellar->getlanguage() ."<div>";
+                    ?>
+                </div>
+                <div class="col-12">
+                    <?php
+                        echo "<h1>" .$wolfOfWallStreet->getTitle() ."</h1>";
+                        echo "<div>Date of pubblication: " .$wolfOfWallStreet->getdate() ."<div>";
+                        echo "<div>Language: " .$wolfOfWallStreet->getlanguage() ."<div>";
                     ?>
                 </div>
             </div>
